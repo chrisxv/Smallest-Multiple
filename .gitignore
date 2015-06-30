@@ -1,28 +1,29 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+#include <iostream>
+using namespace std;
 
-# Precompiled Headers
-*.gch
-*.pch
+int main()
+{
+	int smallest,divisor=1, i;
+	bool found = false;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+	while (!found)
+	{
+		for (i = 1; i <= 20; i++)
+		{
+			if (divisor%i != 0)
+				break;
+		}
+		if (i == 21)
+		{
+			smallest = divisor;
+			found = true;
+		}
+		else
+			divisor++;
+	}
 
-# Fortran module files
-*.mod
+	cout << "Smallest Multple: "<<smallest << endl;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+	system("PAUSE");
+	return 0;
+}
